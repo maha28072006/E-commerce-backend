@@ -63,15 +63,18 @@ const cors = require("cors");
 console.log("MONGO_URI =", process.env.MONGO_URI);
 
 const app = express();
-app.use(
-  cors({
-    origin: [
-      "http://13.201.134.109:3000/", // frontend public IP
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+app.use(cors({
+  origin: "http://13.201.134.109:3000"
+}));
+// app.use(
+//   cors({
+//     origin: [
+//       "http://13.201.134.109:3000/", // frontend public IP
+//     ],
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     allowedHeaders: ["Content-Type", "Authorization"],
+//   })
+// );
 // app.use(cors({
 //   origin: "*",   // for development (later restrict this)
 //   methods: ["GET", "POST", "PUT", "DELETE"],
